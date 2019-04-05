@@ -1,30 +1,29 @@
 import React, { Component } from "react";
+import QuestionsList from "./components/QuestionsList"
+import questions from "./questions.js";
+
 import "./App.css";
-import questions from "./questions.json";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      rMIQuests: []
+      rMIQuests: [],
     };
   }
   componentDidMount() {
-    console.log(questions.questions)
-    for (let question in questions.questions) {
-      this.setState(
-        prevState => {
-          return {
-            rMIQuests: prevState.rMIQuests.concat(question)
-          }
-        }
-      );
-    }
-    console.log(`Data mounting test`, this.state.rMIQuests);
+    this.setState({
+      rMIQuests: questions,
+    });
   }
 
   render() {
-    return <div>{}</div>;
+    return (
+      <div>
+        <QuestionsList questions={this.state.rMIQuests} />
+        <p>Something to look at{console.log(this.state.rMIQuests, `isThisStateful`)}</p>
+      </div>
+    );
   }
 }
 
