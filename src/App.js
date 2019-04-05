@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import QuestionsList from "./components/QuestionsList"
 import questions from "./questions.js";
-
-import "./App.css";
+import 'react-bulma-components/dist/react-bulma-components.min.css';
+import "_variables.sass";
 
 class App extends Component {
   constructor(props) {
