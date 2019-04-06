@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import QuestionsList from "./components/QuestionsList"
+import QuestionsList from "./components/QuestionsList";
 import questions from "./questions.js";
-import 'react-bulma-components/dist/react-bulma-components.min.css';
+import "react-bulma-components/dist/react-bulma-components.min.css";
 import "_variables.sass";
 
 class App extends Component {
   constructor(props) {
-    super(props) 
+    super(props);
     this.state = {
       rMIQuests: [],
       linguistic: [],
@@ -23,25 +23,29 @@ class App extends Component {
 
   componentDidMount() {
     this.setState({
-      rMIQuests: questions,
+      rMIQuests: questions
     });
   }
 
   changeHandler = (event) => {
-    if (event) {
-      console.log(`win`, event.target.id)
-    }
-    this.setState({
-          selectedOpt: event.target.value
-    })
+    // const questArr = [...this.state.rMIQuests].filter(cur => cur.id === parseInt(event.target.name))
+      this.setState(prevState => {
+        if (event === [...this.state.rMIQuests].filter(cur => cur.id === parseInt(event.target.name)))
 
-    
-  }
+        return {selectedOpt: event.target.value}
+      });
+      console.log(`win`, event.target.name);
+    // }
+  };
 
   render() {
     return (
       <div>
-        <QuestionsList questions={this.state.rMIQuests} changeHandler={this.changeHandler} selectedOpt={this.state.selectedOpt} />
+        <QuestionsList
+          questions={this.state.rMIQuests}
+          changeHandler={this.changeHandler}
+          selectedOpt={this.state.selectedOpt}
+        />
         <p>Something to look at</p>
       </div>
     );
