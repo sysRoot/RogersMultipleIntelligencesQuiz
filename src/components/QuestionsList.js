@@ -31,7 +31,7 @@ const QuestionList = props => {
             </th>
           </tr>
         </thead>
-        <Question questions={props.questions} changeHandler={props.changeHandler} radioSelected={props.radioSelected} />
+        <Question questions={props.questions} changeHandler={props.changeHandler} checked={props.selectedOpt} />
       </Table>
     </>
   );

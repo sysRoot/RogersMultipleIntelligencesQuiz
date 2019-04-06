@@ -6,7 +6,7 @@ import "_variables.sass";
 
 class App extends Component {
   constructor(props) {
-    super(props);
+    super(props) 
     this.state = {
       rMIQuests: [],
       linguistic: [],
@@ -27,19 +27,22 @@ class App extends Component {
     });
   }
 
-  changeHandler(event) {
-    event.preventDefault();
+  changeHandler = (event) => {
+    if (event) {
+      console.log(`win`, event.target.id)
+    }
     this.setState({
-      selectedOpt: event.target.value
+          selectedOpt: event.target.value
     })
-    console.log(`fire it the frack off`)
+
+    
   }
 
   render() {
     return (
       <div>
-        <QuestionsList questions={this.state.rMIQuests} changeHandler={this.changeHandler} radioSelected={this.state.selectedOpt} />
-        <p>Something to look at{console.log(this.state.rMIQuests, `isThisStateful`)}</p>
+        <QuestionsList questions={this.state.rMIQuests} changeHandler={this.changeHandler} selectedOpt={this.state.selectedOpt} />
+        <p>Something to look at</p>
       </div>
     );
   }
