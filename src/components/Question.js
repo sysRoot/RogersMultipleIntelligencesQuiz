@@ -14,7 +14,7 @@ const Question = props => {
               <td>
                 <p>{cur.type}</p>
               </td>
-              <ScoreMechanism score={cur.score} type={cur.type} id={cur.id} changeHandler={props.changeHandler} />
+              <ScoreMechanism score={cur.score} type={cur.type} id={cur.id} changeHandler={props.changeHandler} radioSelected={props.radioSelected} />
             </tr>
           </tbody>
         );

@@ -6,19 +6,19 @@ const ScoreMechanism = props => {
   return (
     <>
       <td>
-        <Answer id={props.id} changeHandler={props.changeHandler} weight="1" />
+        <Answer id={props.id} changeHandler={props.changeHandler} weight="1" checked={props.radioSelected} />
       </td>
       <td>
-        <Answer id={props.id} changeHandler={props.changeHandler} weight="2" />
+        <Answer id={props.id} changeHandler={props.changeHandler} weight="2" checked={props.radioSelected} />
       </td>
       <td>
-        <Answer id={props.id} defaultChecked changeHandler={props.changeHandler} weight="3" />
+        <Answer id={props.id} changeHandler={props.changeHandler} weight="3" checked={props.radioSelected} />
       </td>
       <td>
-        <Answer id={props.id} changeHandler={props.changeHandler} weight="4" />
+        <Answer id={props.id} changeHandler={props.changeHandler} weight="4" checked={props.radioSelected} />
       </td>
       <td>
-        <Answer id={props.id} changeHandler={props.changeHandler} weight="5" />
+        <Answer id={props.id} changeHandler={props.changeHandler} weight="5" checked={props.radioSelected} />
       </td>
     </>
   );

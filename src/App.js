@@ -9,14 +9,15 @@ class App extends Component {
     super(props);
     this.state = {
       rMIQuests: [],
-      linguistics: [],
+      linguistic: [],
       musical: [],
       logicMath: [],
       spatial: [],
       bodilyKinesthetic: [],
       intrapersonal: [],
       interpersonal: [],
-      naturalist: []
+      naturalist: [],
+      selectedOpt: "3"
     };
   }
 
@@ -28,13 +29,16 @@ class App extends Component {
 
   changeHandler(event) {
     event.preventDefault();
+    this.setState({
+      selectedOpt: event.target.value
+    })
     console.log(`fire it the frack off`)
   }
 
   render() {
     return (
       <div>
-        <QuestionsList questions={this.state.rMIQuests} changeHandler={this.changeHandler} />
+        <QuestionsList questions={this.state.rMIQuests} changeHandler={this.changeHandler} radioSelected={this.state.selectedOpt} />
         <p>Something to look at{console.log(this.state.rMIQuests, `isThisStateful`)}</p>
       </div>
     );

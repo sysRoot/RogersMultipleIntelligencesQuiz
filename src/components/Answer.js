@@ -5,7 +5,7 @@ const Answer = (props) => {
     <input
         type="radio"
         name={props.id}
-        checked={false}
+        checked={props.checked === props.weight}
         value={props.weight}
         onChange={props.changeHandler}
       />
