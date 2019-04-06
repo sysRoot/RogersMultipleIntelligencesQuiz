@@ -31,7 +31,7 @@ const QuestionList = props => {
             </th>
           </tr>
         </thead>
-        <Question questions={props.questions} />
+        <Question questions={props.questions} changeHandler={props.changeHandler} />
       </Table>
     </>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import ScoreMechanism from "./ScoreMechanism"
+import ScoreMechanism from "./ScoreMechanism";
 
 const Question = props => {
   return (
@@ -8,11 +8,13 @@ const Question = props => {
         return (
           <tbody key={cur.id}>
             <tr>
-              <th>#{cur.id}. {cur.question}</th>
+              <th>
+                {cur.id}.) {cur.question}
+              </th>
               <td>
                 <p>{cur.type}</p>
-                </td>
-                  <ScoreMechanism score={cur.score}/>
+              </td>
+              <ScoreMechanism score={cur.score} type={cur.type} id={cur.id} changeHandler={props.changeHandler} />
             </tr>
           </tbody>
         );
