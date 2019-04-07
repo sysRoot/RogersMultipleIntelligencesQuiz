@@ -17,45 +17,45 @@ const Question = props => {
                 <input
                   type="radio"
                   name={cur.id}
-                  checked={props.checked === "1"}
+                  checked={cur.radio[0]}
                   value="1"
-                  onChange={() => props.changeHandler(cur.id)}
+                  onChange={props.changeHandler}
                 />
               </td>
               <td>
                 <input
                   type="radio"
                   name={cur.id}
-                  checked={props.checked === "2"}
+                  checked={cur.radio[1]}
                   value="2"
-                  onChange={() => props.changeHandler(cur.id)}
+                  onChange={props.changeHandler}
                 />
               </td>
               <td>
                 <input
                   type="radio"
                   name={cur.id}
-                  checked={props.checked === "3"}
+                  checked={cur.radio[2]}
                   value="3"
-                  onChange={() => props.changeHandler(cur.id)}
+                  onChange={props.changeHandler}
                 />
               </td>
               <td>
                 <input
                   type="radio"
                   name={cur.id}
-                  checked={props.checked === "4"}
+                  checked={cur.radio[3]}
                   value="4"
-                  onChange={() => props.changeHandler(cur.id)}
+                  onChange={props.changeHandler}
                 />
               </td>
               <td>
                 <input
                   type="radio"
                   name={cur.id}
-                  checked={props.checked === "5"}
+                  checked={cur.radio[4]}
                   value="5"
-                  onChange={() => props.changeHandler(cur.id)}
+                  onChange={props.changeHandler}
                 />
               </td>
             </tr>

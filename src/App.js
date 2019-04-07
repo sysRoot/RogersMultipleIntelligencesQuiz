@@ -16,8 +16,8 @@ class App extends Component {
       bodilyKinesthetic: [],
       intrapersonal: [],
       interpersonal: [],
-      naturalist: [],
-      selectedOpt: "3"
+      naturalist: []
+      // selectedOpt: "3"
     };
   }
 
@@ -27,16 +27,35 @@ class App extends Component {
     });
   }
 
-  changeHandler = (event) => {
-    // const questArr = [...this.state.rMIQuests].filter(cur => cur.id === parseInt(event.target.name))
-      this.setState(prevState => {
-        if (event === [...this.state.rMIQuests].filter(cur => cur.id === parseInt(event.target.name)))
-
-        return {selectedOpt: event.target.value}
-      });
-      console.log(`win`, event.target.name);
+  changeHandler = event => {
+    const idToMatch = parseInt(event.target.name);
+    const value = parseInt(event.target.value);
+    this.setState(prevState => {
+      return {
+        rMIQuests: prevState.rMIQuests.map(cur => {
+          return idToMatch === cur.id
+            ? {
+                ...cur,
+                score: value,
+                radio: cur.radio.map((option, idx) =>
+                  value === idx + 1 ? !option : false
+                )
+              }
+            : cur
+          })
+      };
+    });
+    console.log(`win`, this.state.rMIQuests);
     // }
   };
+
+  // changeHandler = event => {
+
+  //     this.setState({
+  //       selectedOpt: event.target.value
+  //     });
+  //     console.log(`win`, event.target.name);
+  //   }
 
   render() {
     return (
