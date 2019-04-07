@@ -9,15 +9,14 @@ class App extends Component {
     super(props);
     this.state = {
       rMIQuests: [],
-      linguistic: [],
-      musical: [],
-      logicMath: [],
-      spatial: [],
-      bodilyKinesthetic: [],
-      intrapersonal: [],
-      interpersonal: [],
-      naturalist: []
-      // selectedOpt: "3"
+      linguistic: 0,
+      musical: 0,
+      logicMath: 0,
+      spatial: 0,
+      bodilyKinesthetic: 0,
+      intrapersonal: 0,
+      interpersonal: 0,
+      naturalist: 0
     };
   }
 
@@ -41,12 +40,35 @@ class App extends Component {
                   value === idx + 1 ? !option : false
                 )
               }
-            : cur
-          })
+            : cur;
+        }),
+        linguistic: [
+          prevState.rMIQuests.map(cur => cur.type === "Linguistic" ? cur.score : 0).reduce((acc, next) => acc+next)
+        ],
+        musical: [
+          prevState.rMIQuests.map(cur => cur.type === "Musical" ? cur.score : 0).reduce((acc, next) => acc+next)
+        ],
+        logicMath: [
+          prevState.rMIQuests.map(cur => cur.type === "Logic and Math" ? cur.score : 0).reduce((acc, next) => acc+next)
+        ],
+        spatial: [
+          prevState.rMIQuests.map(cur => cur.type === "Spatial" ? cur.score : 0).reduce((acc, next) => acc+next)
+        ],
+        bodilyKinesthetic: [
+          prevState.rMIQuests.map(cur => cur.type === "Bodily and Kinesthetic" ? cur.score : 0).reduce((acc, next) => acc+next)
+        ],
+        intrapersonal: [
+          prevState.rMIQuests.map(cur => cur.type === "Intrapersonal" ? cur.score : 0).reduce((acc, next) => acc+next)
+        ],
+        interpersonal: [
+          prevState.rMIQuests.map(cur => cur.type === "Interpersonal" ? cur.score : 0).reduce((acc, next) => acc+next)
+        ],
+        naturalist: [
+          prevState.rMIQuests.map(cur => cur.type === "Naturalist" ? cur.score : 0).reduce((acc, next) => acc+next)
+        ]
       };
     });
-    console.log(`win`, this.state.rMIQuests);
-    // }
+    console.log(`win`, this.state.rMIQuests, this.state.linguistic);
   };
 
   // changeHandler = event => {
@@ -65,7 +87,7 @@ class App extends Component {
           changeHandler={this.changeHandler}
           selectedOpt={this.state.selectedOpt}
         />
-        <p>Something to look at</p>
+        <p>{this.state.linguistic}</p>
       </div>
     );
   }
