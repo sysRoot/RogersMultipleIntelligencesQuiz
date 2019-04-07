@@ -58,6 +58,11 @@ const Question = props => {
                   onChange={props.changeHandler}
                 />
               </td>
+              <td>
+                <th>
+                  <p>{cur.score}</p>
+                </th>
+              </td>
             </tr>
           </tbody>
         );

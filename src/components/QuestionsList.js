@@ -29,9 +29,44 @@ const QuestionList = props => {
             <th>
               <p>Almost Always (5)</p>
             </th>
+            <th>
+              <p>Score</p>
+            </th>
           </tr>
         </thead>
-        <Question questions={props.questions} changeHandler={props.changeHandler} checked={props.selectedOpt} />
+        <tfoot>
+          <tr>
+            <th>
+              <p>Linguistic: {props.lin}</p>
+            </th>
+            <th>
+              <p>Musical: {props.mus}</p>
+            </th>
+            <th>
+              <p>Logic and Math: {props.lnm}</p>
+            </th>
+            <th>
+              <p>Spatial: {props.spat}</p>
+            </th>
+            <th>
+              <p>Bodily and Kinesthetic: {props.bnk}</p>
+            </th>
+            <th>
+              <p>Intrapersonal: {props.inr}</p>
+            </th>
+            <th>
+              <p>Interpersonal: {props.ine}</p>
+            </th>
+            <th>
+              <p>Naturalist: {props.nat}</p>
+            </th>
+          </tr>
+        </tfoot>
+        <Question
+          questions={props.questions}
+          changeHandler={props.changeHandler}
+          checked={props.selectedOpt}
+        />
       </Table>
     </>
   );
